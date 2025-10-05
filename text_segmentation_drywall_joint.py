@@ -63,7 +63,6 @@ transform = transforms.Compose([
 # --------------------------
 # 3. Load Data
 # --------------------------
-# Dataset 1: Drywall Taping
 taping_prompts = ["segment taping area", "segment joint/tape", "segment drywall seam"]
 taping_dataset = TextPromptSegDataset(
     image_dir="/scratch/sai/clipseg/data/data_2/train",
@@ -104,11 +103,11 @@ for epoch in range(epochs):
         images_pil = [TF.to_pil_image(img.cpu()) for img in images]
 
         inputs = processor(
-            text=list(prompts),            # make sure it's a flat list of strings
+            text=list(prompts),            
             images=images_pil,
-            padding=True,                  # or "max_length"
+            padding=True,                  
             truncation=True,
-            max_length=77,                 # CLIP/CLIPSeg default
+            max_length=77,                 
             return_tensors="pt"
         ).to(device)
 
@@ -159,7 +158,6 @@ os.makedirs("pred_masks", exist_ok=True)
 
 with torch.no_grad():
     for images, masks, prompts, img_names in tqdm(dataloader):
-        # import pdb;pdb.set_trace()
         images = images.to(device)
         masks = masks.to(device)
 
@@ -180,10 +178,10 @@ with torch.no_grad():
         probs = torch.sigmoid(logits)
 
         masks_resized = F.interpolate(
-            masks.unsqueeze(1).float(),       # (B,1,H_gt,W_gt)
-            size=probs.shape[-2:],            # match H_pred, W_pred
-            mode="nearest"                     # keep binary
-        ).squeeze(1)                          # (B,H_pred,W_pred)
+            masks.unsqueeze(1).float(),       
+            size=probs.shape[-2:],            
+            mode="nearest"                  
+        ).squeeze(1)                         
 
 
         # Metrics + save masks

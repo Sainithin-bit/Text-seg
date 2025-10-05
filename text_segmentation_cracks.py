@@ -105,11 +105,11 @@ for epoch in range(epochs):
         images_pil = [TF.to_pil_image(img.cpu()) for img in images]
 
         inputs = processor(
-            text=list(prompts),            # make sure it's a flat list of strings
+            text=list(prompts),            
             images=images_pil,
-            padding=True,                  # or "max_length"
+            padding=True,                  
             truncation=True,
-            max_length=77,                 # CLIP/CLIPSeg default
+            max_length=77,
             return_tensors="pt"
         ).to(device)
 
@@ -180,10 +180,10 @@ with torch.no_grad():
         probs = torch.sigmoid(logits)
 
         masks_resized = F.interpolate(
-            masks.unsqueeze(1).float(),       # (B,1,H_gt,W_gt)
-            size=probs.shape[-2:],            # match H_pred, W_pred
-            mode="nearest"                     # keep binary
-        ).squeeze(1)                          # (B,H_pred,W_pred)
+            masks.unsqueeze(1).float(),       
+            size=probs.shape[-2:],           
+            mode="nearest"                    
+        ).squeeze(1)                         
 
 
         # Metrics + save masks
@@ -218,7 +218,7 @@ def visualize(image, gt_mask, pred_mask, save_path):
     
     plt.tight_layout()
     plt.savefig(save_path)
-    plt.close(fig)  # close to free memory
+    plt.close(fig)  
 
 # --------------------------
 # Example visualization loop
@@ -255,4 +255,4 @@ for images, masks, prompts, img_names in dataloader:
         )
         visualize(images[i], gt_resized, (probs[i] > 0.5).float(), save_path)
     
-    break  # only first batch
+    break  
