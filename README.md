@@ -11,7 +11,7 @@ The goal of this project is to predict segmentation masks for different prompts 
 - **Cracks Dataset**: Prompts like `"segment crack"` and `"segment wall crack"`.
 - **Drywall Taping Dataset**: Prompts like `"segment taping area"`, `"segment joint/tape"`, `"segment drywall seam"`.
 
-Predicted masks are single-channel PNGs with values `{0, 255}` and filenames containing the image ID and the prompt, e.g., `123__segment_crack.png`.
+Predicted masks are single-channel PNGs with values `{0, 255}`.
 
 ---
 
