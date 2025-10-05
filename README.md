@@ -78,11 +78,11 @@ Below are some sample visualizations showing **Original Image | Ground Truth | P
 <p align="center">
   <div style="display: flex; justify-content: center; gap: 30px;">
     <div align="center">
-      <img src="assets/578_jpg__segment_crack.png" width="250"/>
+      <img src="assets/578_segment_wall_crack.png" width="250"/>
       <p>Prompt: segment crack</p>
     </div>
     <div align="center">
-      <img src="assets/3566_jpg__segment_crack.png" width="250"/>
+      <img src="assets/3566_segment_crack.png" width="250"/>
       <p>Prompt: segment wall crack</p>
     </div>
   </div>
