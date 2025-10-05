@@ -64,7 +64,6 @@ transform = transforms.Compose([
 # 3. Load Data
 # --------------------------
 
-# Dataset 2: Cracks
 crack_prompts = ["segment crack", "segment wall crack"]
 crack_dataset = TextPromptSegDataset(
     image_dir="/scratch/sai/clipseg/data/train",
