@@ -1,5 +1,3 @@
-# text-segmentation
-
 # Text-Prompted Segmentation
 
 This repository contains the implementation of a text-prompted segmentation framework using the **CLIPSeg** model. Given an image and a natural language prompt, the model predicts a binary mask corresponding to the requested object or region (e.g., cracks, drywall seams, taping areas).
