@@ -50,7 +50,7 @@ data/
 │ └── masks/
 ```
 
-### Running the Pipeline  
+## Running the Pipeline  
 
 For data parsing, training, inference, and visualizations, run the following scripts:
 
