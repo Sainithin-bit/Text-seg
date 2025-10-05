@@ -59,7 +59,7 @@ python3 dataparser_cracks.py
 
 # Train the model, run inference, and generate visualizations
 python text_segmentation_cracks.py  
-
+```
 
 ## Qualitative Results
 
