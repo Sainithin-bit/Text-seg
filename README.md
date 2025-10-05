@@ -24,9 +24,10 @@ A Conda environment file `text_seg.yml` is provided with all required dependenci
 conda env create -f text_seg.yml
 
 conda activate clipseg
+```
+## Download Datasets
+```bash
 
-
-##Download Datasets
 
 Create a `data/` folder and download the datasets from Roboflow:
 
