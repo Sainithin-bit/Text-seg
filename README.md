@@ -39,7 +39,7 @@ Create a `data/` folder and download the datasets from Roboflow:
 ```
 
 After downloading, organize the images and masks in the following folder structure:
-
+```bash
 data/
 ├── drywall_taping/
 │ ├── images/
@@ -47,9 +47,18 @@ data/
 ├── cracks/
 │ ├── images/
 │ └── masks/
+```
 
-python3 dataparser_cracks.py
-python text_segmentation_cracks.py
+### Running the Pipeline  
+
+For data parsing, training, inference, and visualizations, run the following scripts:
+
+```bash
+# Parse the dataset and generate masks
+python3 dataparser_cracks.py  
+
+# Train the model, run inference, and generate visualizations
+python text_segmentation_cracks.py  
 
 
 ## Qualitative Results
