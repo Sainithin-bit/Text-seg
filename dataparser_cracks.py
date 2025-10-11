@@ -13,7 +13,7 @@ images_dir = "/scratch/sai/clipseg/data/data_2/train"  # folder with original im
 masks_dir = "/scratch/sai/clipseg/data/data_2/masks"  # output folder
 class_prompt_map = {
     "crack": "segment crack",
-    "NewCracks": "segment taping area"
+    "NewCracks": "segment wall crack"
 }
 image_size = (512, 512)  # resize masks to this
 
