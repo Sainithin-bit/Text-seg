@@ -63,7 +63,7 @@ transform = transforms.Compose([
 # --------------------------
 # 3. Load Data
 # --------------------------
-taping_prompts = ["segment taping area", "segment joint/tape", "segment drywall seam"]
+taping_prompts = ["segment taping area", "segment drywall seam"]
 taping_dataset = TextPromptSegDataset(
     image_dir="/scratch/sai/clipseg/data/data_2/train",
     mask_dir="/scratch/sai/clipseg/data/data_2/masks",
